@@ -1,12 +1,9 @@
 function reddenPage(){
-    document.body.style.backgroundColor='red';
-    console.log("THis works")
-    let h1=document.getElementsByTagName("h1");
-    for(let i=0;i<h1.length;i++){
-        console.log("this is h1")
-        console.log(h1[i])
-        let re=/Pawan Upadhyay/g;
-        h1[i].innerHTML = h1[i].innerHTML.replace(re,"🎉🌹🌹🎉🌹🌹🎉")
+    let re = /(H|h)mani (U|u)padhyay/g;
+    let element=document.querySelectorAll("p,li,h1,h2,h3,h4,h5,h6,span,div");
+    for(let i=0;i<element.length;i++){
+        
+ element[i].innerHTML = element[i].innerHTML.replace(re,"🎉🌹🌹🎉🌹🌹🎉")
     }
 }
 chrome.action.onClicked.addListener( (tab) => {
