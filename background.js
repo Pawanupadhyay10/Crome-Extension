@@ -5,7 +5,8 @@ function reddenPage(){
     for(let i=0;i<h1.length;i++){
         console.log("this is h1")
         console.log(h1[i])
-        h1[i].innerHTML="🎃🎊"
+        let re=/Pawan Upadhyay/g;
+        h1[i].innerHTML = h1[i].innerHTML.replace(re,"🎉🌹🌹🎉🌹🌹🎉")
     }
 }
 chrome.action.onClicked.addListener( (tab) => {
