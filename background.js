@@ -1,5 +1,16 @@
-chrome.runtime.onInstalled.addListener(async () => {
-    let url = chrome.runtime.getURL("Popup.html");
-    let tab = await chrome.tabs.create({ url });
-    console.log(`Created tab ${tab.id}`);
+function reddenPage(){
+    document.body.style.backgroundColor='red';
+    console.log("THis works")
+    let h1=document.getElementsByTagName("h1");
+    for(let i=0;i<h1.length;i++){
+        console.log("this is h1")
+        console.log(h1[i])
+        h1[i].innerHTML="🎃🎊"
+    }
+}
+chrome.action.onClicked.addListener( (tab) => {
+    chrome.scripting.executeScript({
+        target:{tabId:tab.id},
+        function: reddenPage
+    });
 });

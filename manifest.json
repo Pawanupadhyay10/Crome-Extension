@@ -3,6 +3,10 @@
     "name": "My Crome-Extension",
     "version": "1.0",
     "description": "A plain text description",
+    "permissions":[
+        "activeTab",
+        "scripting"
+    ],
     "background": {
         "service_worker":"background.js"
     },
